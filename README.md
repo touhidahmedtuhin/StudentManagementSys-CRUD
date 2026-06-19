@@ -37,4 +37,4 @@ This project is built using Entity Framework Core (Code First Approach) and demo
 ## ⚙️ Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/AspNetSimpleCRUD.git
+   git clone https://github.com/touhidahmedtuhin/StudentManagementSys-CRUD
