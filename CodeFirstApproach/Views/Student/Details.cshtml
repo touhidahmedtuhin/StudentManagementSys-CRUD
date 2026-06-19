@@ -1,0 +1,40 @@
+﻿@model CodeFirstApproach.Models.Student
+
+<!-- Full page flex wrapper -->
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 rounded" style="max-width: 600px; width: 100%;">
+        <!-- Card Header -->
+        <div class="card-header bg-info text-white text-center rounded-top">
+            <h3 class="fw-bold">
+                <i class="fas fa-id-card-alt me-2"></i> Student Details
+            </h3>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3"><i class="fas fa-hashtag me-1 text-secondary"></i> ID</dt>
+                <dd class="col-sm-9">@Model.ID</dd>
+
+                <dt class="col-sm-3"><i class="fas fa-user me-1 text-primary"></i> Name</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+                <dt class="col-sm-3"><i class="fas fa-birthday-cake me-1 text-danger"></i> DOB</dt>
+                <dd class="col-sm-9">@Model.Dob</dd>
+
+                <dt class="col-sm-3"><i class="fas fa-envelope me-1 text-success"></i> Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3"><i class="fas fa-phone-alt me-1 text-warning"></i> Phone</dt>
+                <dd class="col-sm-9">@Model.Phone</dd>
+            </dl>
+
+            <!-- Back Button -->
+            <div class="mt-4 text-center">
+                <a asp-action="List" class="btn btn-outline-dark btn-sm rounded-pill px-3 shadow-sm">
+                    <i class="fas fa-arrow-left me-2"></i> Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

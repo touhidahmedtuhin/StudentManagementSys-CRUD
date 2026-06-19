@@ -1,0 +1,161 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+body {
+    background-color: #F5F5DC;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+.carousel-img {
+    height: 400px; /* ছবির উচ্চতা নির্দিষ্ট */
+    object-fit: cover; /* ছবিকে crop করে সুন্দরভাবে ফিট করবে */
+    /*border-radius: 10px;*/ /* ছবিকে গোলাকার করবে */
+}
+#schoolCarousel {
+    margin-top: 100px;
+}
+/* Navbar link hover effect */
+.nav-link {
+    color: #FFD700 !important; /* Default Yellow */
+    transition: all 0.3s ease;
+}
+
+    .nav-link i {
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        color: #ffffff !important; /* Hover করলে White হবে */
+        background-color: #004642; /* Dark Green background */
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+
+  .nav-link:hover i {
+            color: #FFD700; /* Icon আবার Yellow থাকবে */
+            transform: scale(1.2); /* Icon একটু বড় হবে */
+        }
+.feature-card {
+    border-top: 5px solid #004642;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 70, 66, 0.4);
+        border-top: 5px solid #FFD700; /* Hover করলে সোনালী রঙ */
+    }
+
+    .feature-card i {
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .feature-card:hover i {
+        color: #FFD700; /* Hover করলে আইকন হলুদ হবে */
+        transform: scale(1.2);
+    }
+.feature-card {
+    border-top: 5px solid #004642;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 70, 66, 0.4);
+        border-top: 5px solid #FFD700;
+    }
+
+    .feature-card i {
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .feature-card:hover i {
+        color: #FFD700;
+        transform: scale(1.2);
+    }
+.feature-card {
+    border-top: 5px solid #004642;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 70, 66, 0.4);
+        border-top: 5px solid #FFD700;
+    }
+
+    .feature-card img {
+        transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover img {
+        transform: scale(1.05); /* Hover করলে ছবি zoom হবে */
+    }
+
+/* Sticky Footer Fix */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto; /* Footer সবসময় নিচে থাকবে */
+}
+
+
+.social-icon {
+ /* Default Golden Yellow */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+    .social-icon:hover {
+        color: #FFD700; /* Hover করলে White হবে */
+        transform: scale(1.2); /* Hover করলে আইকন বড় হবে */
+    }
+
+.student-btn {
+    background: linear-gradient(135deg, #FFD700, #FFC107); /* Golden gradient */
+    color: #004642; /* Dark green text */
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+    .student-btn:hover {
+        background: linear-gradient(135deg, #FFC107, #FFD700); /* Reverse gradient */
+        color: #fff; /* White text on hover */
+        transform: scale(1.1); /* Slight zoom */
+        box-shadow: 0 8px 20px rgba(0, 70, 66, 0.4);
+    }

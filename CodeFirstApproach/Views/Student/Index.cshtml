@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Student Portal";
+}
+
+<!-- Include Font Awesome for modern icons -->
+<link rel="stylesheet" href="https://cloudflare.com" />
+<link href="https://googleapis.com" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f4f7f6;
+    }
+    /* পুরো কন্টেইনারকে স্ক্রিনের ঠিক মাঝখানে রাখার জন্য */
+    .portal-center-wrapper {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    /* স্টাইলিশ বড় আইকন বক্স */
+    .portal-icon-box {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #004642 0%, #00796b 100%);
+        color: white;
+        font-size: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 24px;
+        box-shadow: 0 10px 20px rgba(0, 70, 66, 0.2);
+    }
+    /* প্রিমিয়াম বাটন ডিজাইন */
+    .portal-btn {
+        background-color: #004642;
+        color: white;
+        font-weight: 600;
+        padding: 12px 30px;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+        .portal-btn:hover {
+            background-color: #00796b;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 121, 107, 0.3);
+        }
+</style>
+
+<div class="portal-center-wrapper text-center">
+
+    <!-- বড় ভিজ্যুয়াল আইকন (ছবির পরিবর্তে) -->
+    <div class="portal-icon-box animate__animated animate__zoomIn">
+        <i class="fa-solid fa-graduation-cap"></i>
+    </div>
+
+    <!-- পোর্টাল টাইটেল -->
+    <h1 class="fw-extrabold text-dark mb-2">Student Portal</h1>
+    <p class="text-muted mb-4 fs-6 mx-auto" style="max-width: 400px;">
+        Welcome to the central management hub. Click below to view and manage active student records.
+    </p>
+
+    <!-- স্টাইলিশ অ্যাকশন বাটন -->
+    <a asp-controller="Student" asp-action="List"
+       class="btn portal-btn rounded-pill shadow-sm">
+        <i class="fas fa-users me-2"></i> Open Student List
+    </a>
+
+</div>

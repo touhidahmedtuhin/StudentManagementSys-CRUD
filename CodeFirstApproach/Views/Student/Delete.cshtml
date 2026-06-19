@@ -1,0 +1,136 @@
+﻿@model CodeFirstApproach.Models.Student
+
+@{
+    ViewData["Title"] = "Delete Student";
+}
+
+<!-- Include Google Fonts and Font Awesome -->
+<link rel="stylesheet" href="https://cloudflare.com" />
+<link href="https://googleapis.com" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f4f7f6;
+    }
+    /* পুরো পেজটিকে স্ক্রিনের মাঝখানে রাখার জন্য wrapper */
+    .delete-wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 15px;
+    }
+    /* স্লিম এবং কম্প্যাক্ট ৪২০ পিক্সেল কার্ড */
+    .delete-card {
+        border: none;
+        border-radius: 12px;
+        background-color: #ffffff;
+        width: 100%;
+        max-width: 420px;
+    }
+    /* ডিলিট সতর্কতার জন্য লাল গ্রেডিয়েন্ট হেডার */
+    .danger-header {
+        background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    /* স্টুডেন্ট তথ্যের ছোট লেবেল স্টাইল */
+    .info-label {
+        font-size: 0.75rem;
+        text-uppercase: uppercase;
+        letter-spacing: 0.5px;
+        color: #6c757d;
+        font-weight: 700;
+        margin-bottom: 1px;
+    }
+
+    .info-value {
+        font-size: 0.9rem;
+        color: #212529;
+        font-weight: 500;
+    }
+
+    .fs-7 {
+        font-size: 0.8rem !important;
+    }
+</style>
+
+<div class="delete-wrapper">
+    <div class="card delete-card shadow-sm">
+
+        <!-- লাল সতর্কবার্তা হেডার (প্যাডিং ছোট রাখা হয়েছে) -->
+        <div class="danger-header p-3 text-white text-center">
+            <div class="mb-1" style="font-size: 1.8rem;">
+                <i class="fa-solid fa-triangle-exclamation animate__animated animate__pulse animate__infinite"></i>
+            </div>
+            <h5 class="fw-bold mb-0">Remove Student?</h5>
+            <p class="text-white-50 fs-7 mb-0">This action cannot be undone</p>
+        </div>
+
+        <div class="card-body p-3">
+
+            <!-- স্টুডেন্টের সংক্ষিপ্ত তথ্য প্রদর্শন (আইকন সহ) -->
+            <div class="bg-light p-3 rounded mb-3 border-start border-danger border-3">
+                <div class="row g-2">
+
+                    <!-- স্টুডেন্ট আইডি -->
+                    <div class="col-12 border-bottom pb-1.5 mb-1.5 d-flex align-items-center">
+                        <i class="fa-solid fa-id-badge text-muted me-2" style="width: 16px;"></i>
+                        <div>
+                            <div class="info-label">Student ID</div>
+                            <div class="info-value">@Model.ID</div>
+                        </div>
+                    </div>
+
+                    <!-- নাম -->
+                    <div class="col-12 border-bottom pb-1.5 mb-1.5 d-flex align-items-center">
+                        <i class="fa-solid fa-user text-muted me-2" style="width: 16px;"></i>
+                        <div>
+                            <div class="info-label">Full Name</div>
+                            <div class="info-value">@Model.Name</div>
+                        </div>
+                    </div>
+
+                    <!-- ইমেইল -->
+                    <div class="col-12 border-bottom pb-1.5 mb-1.5 d-flex align-items-center">
+                        <i class="fa-solid fa-envelope text-muted me-2" style="width: 16px;"></i>
+                        <div class="text-truncate">
+                            <div class="info-label">Email Address</div>
+                            <div class="info-value text-truncate">@Model.Email</div>
+                        </div>
+                    </div>
+
+                    <!-- ফোন নম্বর -->
+                    <div class="col-12 d-flex align-items-center">
+                        <i class="fa-solid fa-phone text-muted me-2" style="width: 16px;"></i>
+                        <div>
+                            <div class="info-label">Phone Number</div>
+                            <div class="info-value">@Model.Phone</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ডিলিট কনফার্মেশন ফর্ম এবং বাটনসমূহ -->
+            <form asp-action="Delete">
+                <!-- আইডিটি ব্যাকএন্ডে পাঠানোর জন্য হিডেন ইনপুট ফিল্ড -->
+                <input type="hidden" asp-for="ID" />
+
+                <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                    <!-- ক্যানসেল বা ব্যাক বাটন (লিস্ট পেজে ফিরে যাবে) -->
+                    <a asp-action="List" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fs-7 fw-bold">
+                        <i class="fas fa-arrow-left me-1"></i> Cancel
+                    </a>
+
+                    <!-- কনফার্ম ডিলিট বাটন -->
+                    <button type="submit" class="btn btn-danger btn-sm rounded-pill px-3 fs-7 fw-bold shadow-sm">
+                        <i class="fas fa-trash-can me-1"></i> Confirm Delete
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
